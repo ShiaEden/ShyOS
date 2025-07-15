@@ -1,70 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ShyOS v2.0 — Ultimate Web Desktop</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
-<style>
-  /* Paste the CSS from next section here */
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShyOS Ultimate v2.0</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div id="wallpaper"></div>
-
-<!-- Landing / Boot Screen -->
-<section id="landing" class="active">
-  <h1>Welcome to <span>ShyOS</span></h1>
-  <button id="bootBtn">BOOT</button>
-  <p class="version">Version 2.0</p>
-</section>
-
-<!-- Login / Signup Screen -->
-<section id="login" class="">
-  <h2>Login or Signup</h2>
-  <input type="text" id="username" placeholder="Username" autocomplete="off" />
-  <input type="password" id="password" placeholder="Password" autocomplete="off" />
-  <div id="loginError"></div>
-  <button id="loginBtn">Login</button>
-  <button id="signupBtn">Sign Up</button>
-  <button id="guestBtn">Continue as Guest</button>
-</section>
-
-<!-- Desktop -->
-<section id="desktop" class="">
-  <div id="desktop-icons" tabindex="0" aria-label="Desktop Icons"></div>
-
-  <!-- Dock -->
-  <div id="dock"></div>
-
-  <!-- Toolbar -->
-  <div id="toolbar">
-    <div id="themeToggle" title="Toggle Theme">🌙</div>
-    <div id="tray-time" aria-live="polite"></div>
-    <button id="logoutBtn" title="Logout">Logout</button>
+  <div id="landing" class="active">
+    <button id="bootBtn">BOOT</button>
   </div>
 
-  <!-- Windows container -->
-  <div id="windows"></div>
+  <div id="login">
+    <input id="username" type="text" placeholder="Username" />
+    <input id="password" type="password" placeholder="Password" />
+    <div id="loginError"></div>
+    <button id="loginBtn">Login</button>
+    <button id="signupBtn">Signup</button>
+    <button id="guestBtn">Guest</button>
+  </div>
 
-  <!-- Notifications -->
-  <div id="notifications" aria-live="polite"></div>
-
-  <!-- Modal -->
-  <div id="modal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-message">
-    <div id="modal-content">
-      <h3 id="modal-title">Confirm</h3>
-      <p id="modal-message"></p>
-      <div class="buttons">
-        <button id="modal-ok">OK</button>
-        <button id="modal-cancel">Cancel</button>
-      </div>
+  <div id="desktop">
+    <div id="toolbar">
+      <span id="tray-time"></span>
+      <button id="themeToggle">🌙</button>
+      <button id="logoutBtn">Logout</button>
     </div>
+    <div id="wallpaper"></div>
+    <div id="windows"></div>
+    <div id="desktop-icons"></div>
+    <div id="dock"></div>
+    <div id="notifications"></div>
   </div>
-</section>
 
-<script>
-  /* Paste the JS from next section here */
-</script>
+  <!-- Modal template -->
+  <div id="modal" style="display: none;">
+    <div id="modal-title"></div>
+    <div id="modal-message"></div>
+    <button id="modal-ok">OK</button>
+    <button id="modal-cancel">Cancel</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
